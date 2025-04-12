@@ -1,0 +1,428 @@
+/* Custom Animations */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation Classes */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Hover Effects */
+.hover-lift {
+    transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3B82F6;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2563EB;
+}
+
+/* Custom Gradient Backgrounds */
+.bg-gradient-blue-purple {
+    background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+}
+
+.bg-gradient-blue-green {
+    background: linear-gradient(135deg, #3B82F6 0%, #10B981 100%);
+}
+
+.bg-gradient-dark {
+    background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
+}
+
+/* Utilities */
+.text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow-md {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.text-shadow-lg {
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Glass Morphism */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-effect-dark {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Shape Dividers */
+.wave-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave-divider svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 70px;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    h2 {
+        font-size: 2rem !important;
+    }
+    
+    h3 {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* Image Filters */
+.img-filter-blue {
+    filter: sepia(30%) hue-rotate(190deg) saturate(200%);
+}
+
+.img-filter-green {
+    filter: sepia(30%) hue-rotate(90deg) saturate(200%);
+}
+
+/* Better Focus Styles for Accessibility */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+}
+
+/* Remove focus outline for navbar links */
+.navbar a:focus, 
+.navbar button:focus, 
+.dropdown-menu a:focus,
+#mobile-menu a:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    z-index: 50;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Create a slightly larger hit area for the dropdown */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+}
+
+/* Mobile dropdowns should be visible by default */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin-top: 0;
+        box-shadow: none;
+    }
+}
+
+/* Custom CSS for Devcation'25 */
+
+/* Base styling */
+body {
+    scroll-behavior: smooth;
+}
+
+/* Navbar styles */
+.navbar {
+    transition: all 0.3s ease;
+}
+
+/* Dropdown animations */
+.dropdown-menu {
+    transform-origin: top;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fancy hover animations */
+.group:hover span.absolute {
+    width: 100%;
+}
+
+.relative.overflow-hidden span.relative.z-10 {
+    transition: color 0.3s ease;
+}
+
+.relative.overflow-hidden:hover span.relative.z-10 {
+    color: white;
+}
+
+.active-nav {
+    color: #3B82F6 !important;
+    font-weight: 600;
+}
+
+.active-nav .absolute {
+    width: 100% !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+/* Navbar hover improvements */
+.dropdown-toggle {
+    position: relative;
+}
+
+.dropdown-menu {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(10px);
+    opacity: 0;
+    display: block;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Improve register button hover */
+a[href="#register"].rounded-full {
+    transition: all 0.3s ease;
+}
+
+a[href="#register"].rounded-full:hover {
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+}
+
+/* Mobile menu improvements */
+#mobile-menu a span.relative.z-10 {
+    transition: transform 0.3s ease;
+}
+
+#mobile-menu a:hover span.relative.z-10 {
+    transform: translateX(5px);
+}
+
+/* Register now button pulse animation */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+}
+
+.hero-section a[href="#register"] {
+    animation: pulse 2s infinite;
+}
+
+/* Animation for Mentors section floating elements */
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+.animate-float {
+    animation-name: float;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+/* Grid pattern background */
+.bg-grid-pattern {
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.8) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Timeline styles */
+.timeline-circle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(to right, #3B82F6, #10B981);
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.9), 0 0 0 8px rgba(59, 130, 246, 0.2);
+    animation: pulse-timeline 2s infinite;
+}
+
+@keyframes pulse-timeline {
+    0% {
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.9), 0 0 0 8px rgba(59, 130, 246, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.9), 0 0 0 12px rgba(59, 130, 246, 0.1);
+    }
+    100% {
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.9), 0 0 0 8px rgba(59, 130, 246, 0.2);
+    }
+}
+
+/* Make timeline responsive */
+@media (max-width: 768px) {
+    .timeline-circle {
+        left: 50%;
+    }
+}
+
+/* Text gradient for icons */
+.text-gradient-blue-green {
+    background: linear-gradient(to right, #3B82F6, #10B981);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* FAQ Section Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.bg-grid-pattern {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bg-gradient {
+  background: linear-gradient(90deg, #3B82F6 0%, #10B981 100%);
+}
+
+/* FAQ Transition Effects */
+.faq-header, .faq-content {
+  transition: all 0.3s ease;
+}
+
+.faq-header:hover {
+  background-color: rgba(59, 130, 246, 0.05);
+} 
